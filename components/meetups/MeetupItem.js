@@ -1,5 +1,4 @@
 import Card from "../ui/Card";
-import classes from "./MeetupItem.module.css";
 import { useRouter } from "next/router";
 
 function MeetupItem(props) {
@@ -10,17 +9,26 @@ function MeetupItem(props) {
   };
 
   return (
-    <li className={classes.item}>
+    <li className="mx-0 my-4">
       <Card>
-        <div className={classes.image}>
-          <img src={props.image} alt={props.title} />
+        <div className="w-full h-80 rounded-t-m overflow-hidden">
+          <img
+            src={props.image}
+            alt={props.title}
+            className="w-full object-cover"
+          />
         </div>
-        <div className={classes.content}>
-          <h3>{props.title}</h3>
+        <div className="text-center p-4">
+          <h3 className="text-xl">{props.title}</h3>
           <address>{props.address}</address>
         </div>
-        <div className={classes.actions}>
-          <button onClick={showDetailsHandler}>Show Details</button>
+        <div className="p-6 text-center">
+          <button
+            className="rounded py-2 px-6 bg-transparent text-rose-700 border border-solid border-rose-700 hover:bg-rose-200"
+            onClick={showDetailsHandler}
+          >
+            Show Details
+          </button>
         </div>
       </Card>
     </li>

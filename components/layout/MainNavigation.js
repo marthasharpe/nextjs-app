@@ -1,22 +1,29 @@
-import classes from "./MainNavigation.module.css";
 import Link from "next/link";
 
-function MainNavigation() {
+const MainNavigation = () => {
   return (
-    <header className={classes.header}>
-      <div className={classes.logo}>React Meetups</div>
+    <header className="w-full h-20 flex items-center justify-between bg-rose-700 py-0 px-8">
+      <div className="text-4xl text-white font-bold">React Meetups</div>
       <nav>
-        <ul>
-          <li>
-            <Link href="/">All Meetups</Link>
+        <ul className="flex">
+          <li className="ml-12">
+            <Link href="/">
+              <a className="text-rose-300 hover:text-white text-2xl">
+                All Meetups
+              </a>
+            </Link>
           </li>
-          <li>
-            <Link href="/new-meetup">Add New Meetup</Link>
+          <li className="ml-12">
+            <Link href="/new-meetup">
+              <a className="text-rose-300 hover:text-white text-2xl">
+                + New Meetup
+              </a>
+            </Link>
           </li>
         </ul>
       </nav>
     </header>
   );
-}
+};
 
 export default MainNavigation;

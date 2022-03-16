@@ -1,7 +1,5 @@
 import { useRef } from "react";
-
 import Card from "../ui/Card";
-import classes from "./NewMeetupForm.module.css";
 
 const NewMeetupForm = (props) => {
   const titleInputRef = useRef();
@@ -29,30 +27,59 @@ const NewMeetupForm = (props) => {
 
   return (
     <Card>
-      <form className={classes.form} onSubmit={submitHandler}>
-        <div className={classes.control}>
-          <label htmlFor="title">Meetup Title</label>
-          <input type="text" required id="title" ref={titleInputRef} />
+      <form className="p-4" onSubmit={submitHandler}>
+        <div className="mb-2">
+          <label htmlFor="title" className="block font-bold mb-2">
+            Meetup Title
+          </label>
+          <input
+            className="block rounded border border-solid border-gray-500 w-full p-1"
+            type="text"
+            required
+            id="title"
+            ref={titleInputRef}
+          />
         </div>
-        <div className={classes.control}>
-          <label htmlFor="image">Meetup Image</label>
-          <input type="url" required id="image" ref={imageInputRef} />
+        <div className="mb-2">
+          <label htmlFor="image" className="block font-bold mb-2">
+            Meetup Image
+          </label>
+          <input
+            className="block rounded border border-solid border-gray-500 w-full p-1"
+            type="url"
+            required
+            id="image"
+            ref={imageInputRef}
+          />
         </div>
-        <div className={classes.control}>
-          <label htmlFor="address">Address</label>
-          <input type="text" required id="address" ref={addressInputRef} />
+        <div className="mb-2">
+          <label htmlFor="address" className="block font-bold mb-2">
+            Address
+          </label>
+          <input
+            className="block rounded border border-solid border-gray-500 w-full p-1"
+            type="text"
+            required
+            id="address"
+            ref={addressInputRef}
+          />
         </div>
-        <div className={classes.control}>
-          <label htmlFor="description">Description</label>
+        <div className="mb-2">
+          <label htmlFor="description" className="block font-bold mb-2">
+            Description
+          </label>
           <textarea
+            className="block rounded border border-solid border-gray-500 w-full p-1"
             id="description"
             required
             rows="5"
             ref={descriptionInputRef}
           ></textarea>
         </div>
-        <div className={classes.actions}>
-          <button>Add Meetup</button>
+        <div className="mt-4 text-right">
+          <button className="cursor-pointer text-white bg-rose-700 py-2 px-6 border border-solid border-rose-700 rounded font-bold hover:bg-rose-300 hover:text-rose-700">
+            Add Meetup
+          </button>
         </div>
       </form>
     </Card>

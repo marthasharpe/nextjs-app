@@ -31,7 +31,8 @@ export const getStaticPaths = async () => {
 
   return {
     // Are all paths defined here? (false) Generate a fallback page (true)
-    fallback: false,
+    // 'blocking' prevents page until data is loaded
+    fallback: "blocking",
     // all paths that lead to this page
     paths: meetups.map((meetup) => ({
       params: {
